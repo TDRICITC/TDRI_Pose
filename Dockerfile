@@ -1,4 +1,5 @@
-FROM ubuntu:20.04
+FROM nvidia/cuda:11.3.0-runtime-ubuntu20.04
+#FROM ubuntu:20.04
 LABEL INSTANCE_TYPE="hello-world"
 MAINTAINER gwjinag1026@gmail.com
 
@@ -35,7 +36,8 @@ RUN apt-get update && \
 RUN apt-get install -y libglib2.0-0
 RUN pip install mediapipe
 RUN pip install cvzone
-RUN pip3 install torch==1.10.1+cpu torchvision==0.11.2+cpu torchaudio==0.10.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+#RUN pip3 install torch==1.10.1+cpu torchvision==0.11.2+cpu torchaudio==0.10.1+cpu -f https://download.pytorch.org/whl/cpu/torch_stable.html
+RUN pip3 install torch==1.10.1+cu113 torchvision==0.11.2+cu113 torchaudio==0.10.1+cu113 -f https://download.pytorch.org/whl/cu113/torch_stable.html
 RUN pip3 install pyyaml
 RUN pip install tqdm
 RUN pip install seaborn
