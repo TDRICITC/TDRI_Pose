@@ -4,7 +4,7 @@
 
 
 ## build docker image
-image_name="tdri/yolov5-python-flask:demo"
+image_name="tdri/yolov5-python-flask:01"
 docker build -t "$image_name" .
 
 ```
@@ -12,7 +12,7 @@ docker build -t "$image_name" .
 ### run as deamon 
 ```
 container_name="yolov5-flask-01"
-image_name="tdri/yolov5-python-flask:demo"
+image_name="tdri/yolov5-python-flask:01"
 docker run -d all --name ${container_name} \
     -p 5000:5000 \
     ${image_name} \
@@ -21,11 +21,10 @@ docker run -d all --name ${container_name} \
 ### direct run flask 
 ```
 container_name="yolov5-flask-01"
-image_name="tdri/yolov5-python-flask:demo"
-docker run -d --rm --name ${container_name} \
+image_name="tdri/yolov5-python-flask:01"
+docker run -d --restart=always --name ${container_name} \
     -p 5000:5000 \
     ${image_name} \
-    flask run --host=0.0.0.0 --no-reload
-
+    gunicorn -w 20 -b :5000 flask_app:app
 
 ```
