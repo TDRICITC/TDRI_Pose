@@ -48,9 +48,9 @@ for filename in os.listdir(file_pathname):
     img = cv2.imread(file_pathname+'/'+filename)
 
     try:
-        cv2.putText(img, "api_answer = "+str(image_result), (5,150), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
+        cv2.putText(img, "api_answer = "+str(image_result), (5,40), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
     except Exception as err:
-        cv2.putText(img, "api_answer = null", (5,50 ), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
+        cv2.putText(img, "api_answer = null", (5,40), cv2.FONT_HERSHEY_SIMPLEX, 0.75, (0, 0, 255), 2)
     
     
     cv2.imshow("show",img)
