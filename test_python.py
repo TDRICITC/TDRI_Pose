@@ -21,12 +21,12 @@ import numpy as np
 import os
 import mediapipe as mp 
 import pandas as pd
+###########input############
 
+file_pathname = r"C:\Users\GWJIANG\20211125\acc\2021-12-31\camera01\1" #影像資料路徑
+answer = pd.read_csv(r"C:\Users\GWJIANG\20211125\acc\1231.csv")        #答案csv路徑
 
-#file_pathname = r"C:\Users\GWJIANG\20211125\testdata"
-file_pathname = r"C:\Users\GWJIANG\20211125\acc\2021-12-31\camera01\1"
-answer = pd.read_csv(r"C:\Users\GWJIANG\20211125\acc\1231.csv")
-
+############################
 for filename in os.listdir(file_pathname):
 
     #filename = str(filename)+".jpg"
