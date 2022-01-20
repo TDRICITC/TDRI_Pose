@@ -4,23 +4,16 @@ Created on Thu Nov 25 16:38:29 2021
 
 @author: GWJIANG
 """
-import threading
-import tkinter as tk
-from tkinter import *
 import cv2
-from PIL import Image,ImageTk
 from random import choice
 import cv2
 import time
 import json                                                                              
-import requests
-from PIL import Image
 from io import BytesIO 
-from cvzone.HandTrackingModule import HandDetector
 import numpy as np    
 import os
-import mediapipe as mp 
 import pandas as pd
+
 ###########input############
 
 file_pathname = r"C:\Users\GWJIANG\20211125\acc\2021-12-31\camera01\1" #影像資料路徑
